@@ -222,8 +222,7 @@ void cursor_word_hl_hl_word(yed_event *event) {
                     /* Don't highlight the one actually under the cursor. */
                 } else if (strncmp(word, the_word, word_len) == 0) {
                     for (i = 0; i < word_len; i += 1) {
-                        attr = array_item(event->line_attrs, old_col + i - 1);
-                        yed_combine_attrs(attr, &asc);
+                        yed_eline_combine_col_attrs(event, old_col + i, &asc);
                     }
                 }
             }
