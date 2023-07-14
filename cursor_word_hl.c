@@ -49,7 +49,6 @@ void cursor_word_hl_line_handler(yed_event *event) {
     if (!frame
     ||  frame != ys->active_frame
     ||  !frame->buffer
-    ||  frame->buffer->has_selection
     ||  frame->buffer->kind != BUFF_KIND_FILE) {
         return;
     }
